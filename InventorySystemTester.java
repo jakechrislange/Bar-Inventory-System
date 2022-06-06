@@ -139,6 +139,7 @@ public class InventorySystemTester {
     // create 2 objects (A & B). Test A_rating > & < B_Rating. Test rating == , A_unitCost > B_Unit costs, cost ==. 1 when this == A and A > B
 
     
+    //test comment
 
 
 
