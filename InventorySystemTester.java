@@ -2,9 +2,9 @@
 // could also add a class to print accounting statements/entries for bought/sold inventory including
 // profit/loss.
 
-
 /**
- * Tester class for Bar Inventory System classes: Shelf, Cooler, LiquorWine, Beer
+ * Tester class for Bar Inventory System classes: Shelf, Cooler, LiquorWine,
+ * Beer
  * 
  * @author Jacob Lange
  *
@@ -37,8 +37,6 @@ public class InventorySystemTester {
    * @return true if correct behavior, false otherwise.
    */
   public static boolean beerTest() {
-    // #TODO
-
     // test constructor. Valid object. Invalid name, cost, quantity, rating.
     try {
       Beer testDrink = new Beer("Coors Light", 1.00, 24, 7);
@@ -111,49 +109,58 @@ public class InventorySystemTester {
     }
 
     // Accessors & Mutators
-    
-    
     try {
-      
       Beer testDrink = new Beer("Coors Light", 1.00, 20, 7);
-      
       if (!testDrink.getName().equals("Coors Light")) {
         return false;
       }
-      
       if (Math.abs(testDrink.getUnitCost() - 1.00) > .001) {
         return false;
       }
-      
-      
-      
-      // # TODO finish rest of setters/getters
-      
-      
-      
-      
-      
+      if (Math.abs(testDrink.getTotalCost() - 20) > .001) {
+        return false;
+      }
+      if (testDrink.getQuantity() != 20) {
+        return false;
+      }
+      if (testDrink.getRating() != 7) {
+        return false;
+      }
+      testDrink.setQuantity(2); // +2
+      if (testDrink.getQuantity() != 22 && Math.abs(testDrink.getTotalCost() - 22) > .001) {
+        return false;
+      }
     } catch (Exception e) {
       return false;
     }
-    
-    
-    
-    
-    // test commenet
-    
-    
-    
-    
 
     // CompareTo
 
+    // create 2 objects (A & B). Test A_rating > & < B_Rating. Test rating == , A_unitCost > B_Unit costs, cost ==. 1 when this == A and A > B
+
+    
+
+
+
+
+
+
+
+
     // Equals
+
+
+
+
+
 
     // ToString
 
-
-
+    
+    
+    
+    
+    
     return true; // default
   }
 
@@ -167,7 +174,6 @@ public class InventorySystemTester {
     return false; // default
   }
 
-
   /**
    * Runs all tester methods
    * 
@@ -180,8 +186,6 @@ public class InventorySystemTester {
       System.out.println("beerTest() failed!");
       return false;
     }
-
-
 
     return true;
   }
