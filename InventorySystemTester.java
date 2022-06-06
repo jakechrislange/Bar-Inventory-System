@@ -135,31 +135,47 @@ public class InventorySystemTester {
     }
 
     // CompareTo
-
-    // create 2 objects (A & B). Test A_rating > & < B_Rating. Test rating == , A_unitCost > B_Unit costs, cost ==. 1 when this == A and A > B
-
-    
-    
-
-
-
-
-
+    try {
+      Beer drinkA = new Beer("Miller", 1.20, 24, 8);
+      Beer drinkB = new Beer("Coors", 1.00, 22, 7);
+      Beer drinkC = new Beer("Cheaper Miller", 1.00, 22, 8);
+      Beer drinkD = new Beer("Coors Repeated", 1.00, 22, 7);
+      if (drinkA.compareTo(drinkB) != 1 || drinkB.compareTo(drinkA) != -1) {
+        return false;
+      }
+      if (drinkA.compareTo(drinkC) != 1 || drinkC.compareTo(drinkA) != -1) {
+        return false;
+      }
+      if (drinkB.compareTo(drinkD) != 0) {
+        return false;
+      }
+    } catch (Exception e) {
+      return false;
+    }
 
     // Equals
-
-
-
-
-
+    try {
+      Beer drinkA = new Beer("Miller", 1.20, 24, 8);
+      Beer drinkB = new Beer("Miller", 1.20, 22, 7);
+      Beer drinkC = new Beer("Coors", 1.00, 22, 8);
+      Beer drinkD = new Beer("Miller", 1.00, 22, 7);
+      if (!drinkA.equals(drinkB) || drinkA.equals(drinkC) || drinkA.equals(drinkD)) {
+        return false;
+      }
+    } catch (Exception e) {
+      return false;
+    }
 
     // ToString
+    try {
+      Beer drinkA = new Beer("Miller", 1.20, 24, 8);
+      if (!drinkA.toString().equals("[(Name: Miller) (Unit Cost: $1.2) (Quantity: 24) (Rating: 8/10)]")) {
+        return false;
+      }
+    } catch (Exception e) {
+      return false;
+    }
 
-    
-    
-    
-    
-    
     return true; // default
   }
 
@@ -170,6 +186,7 @@ public class InventorySystemTester {
    */
   public static boolean liquorWineTest() {
     // #TODO
+
     return false; // default
   }
 

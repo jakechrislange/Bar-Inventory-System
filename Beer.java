@@ -147,6 +147,6 @@ public class Beer implements Comparable<Beer> {
   @Override
   public String toString() {
     return "[(Name: " + name + ") (Unit Cost: $" + unitCost + ") (Quantity: " + quantity
-        + ") (Rating: " + rating + ")]";
+        + ") (Rating: " + rating + "/10)]";
   }
 }
