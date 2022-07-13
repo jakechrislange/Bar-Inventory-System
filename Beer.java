@@ -56,9 +56,9 @@ public class Beer implements Comparable<Beer> {
   }
 
   /**
-   * Returns the cost per unit of the beer beverage
+   * Returns the total cost of the beer beverage pyrchase
    * 
-   * @return cost of beer beverage
+   * @return cost of beer beverage purchase
    */
   public double getTotalCost() {
     return this.unitCost * this.quantity;
