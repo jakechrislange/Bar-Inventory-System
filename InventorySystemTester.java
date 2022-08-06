@@ -338,6 +338,10 @@ public class InventorySystemTester {
       System.out.println("beerTest() failed!");
       return false;
     }
+    if (!liquorWineTest()){
+      System.out.println("liquorWine() failed!");
+      return false;
+    }
 
     return true;
   }

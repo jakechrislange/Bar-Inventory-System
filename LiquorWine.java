@@ -115,11 +115,11 @@ public class LiquorWine implements Comparable<LiquorWine> {
    */
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof Beer)) {
+    if (!(obj instanceof LiquorWine)) {
       return false;
     }
-    if (this.name.equals(((Beer) obj).getName())
-        && Math.abs(this.unitCost - ((Beer) obj).getUnitCost()) < .001) {
+    if (this.name.equals(((LiquorWine) obj).getName())
+        && Math.abs(this.unitCost - ((LiquorWine) obj).getUnitCost()) < .001) {
       return true;
     } else {
       return false;
