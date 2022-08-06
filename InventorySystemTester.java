@@ -186,7 +186,7 @@ public class InventorySystemTester {
    */
   public static boolean liquorWineTest() {
     try {
-      LiquorWine testDrink = new LiquorWine("Coors Light", 1.00, 24, 7);
+      LiquorWine testDrink = new LiquorWine("Pinot Noir", 1.00, 24, 7);
     } catch (Exception e) {
       return false;
     }
@@ -199,7 +199,7 @@ public class InventorySystemTester {
       return false;
     }
     try {
-      Beer testDrink = new Beer("  ", 1.00, 24, 7);
+      LiquorWine testDrink = new LiquorWine("  ", 1.00, 24, 7);
       return false;
     } catch (IllegalArgumentException e) {
 
@@ -207,7 +207,7 @@ public class InventorySystemTester {
       return false;
     }
     try {
-      Beer testDrink = new Beer("Coors Light", 0.0, 24, 7);
+      LiquorWine testDrink = new LiquorWine("Jameson", 0.0, 24, 7);
       return false;
     } catch (IllegalArgumentException e) {
 
@@ -215,7 +215,7 @@ public class InventorySystemTester {
       return false;
     }
     try {
-      Beer testDrink = new Beer("Coors Light", -1.0, 24, 7);
+      LiquorWine testDrink = new LiquorWine("Jameson", -1.0, 24, 7);
       return false;
     } catch (IllegalArgumentException e) {
 
@@ -223,7 +223,7 @@ public class InventorySystemTester {
       return false;
     }
     try {
-      Beer testDrink = new Beer("Coors Light", 1.00, 0, 7);
+      LiquorWine testDrink = new LiquorWine("Jameson", 1.00, 0, 7);
       return false;
     } catch (IllegalArgumentException e) {
 
@@ -231,7 +231,7 @@ public class InventorySystemTester {
       return false;
     }
     try {
-      Beer testDrink = new Beer("Coors Light", 1.00, -1, 7);
+      LiquorWine testDrink = new LiquorWine("Moscato", 1.00, -1, 7);
       return false;
     } catch (IllegalArgumentException e) {
 
@@ -239,7 +239,7 @@ public class InventorySystemTester {
       return false;
     }
     try {
-      Beer testDrink = new Beer("Coors Light", 1.00, 20, 0);
+      LiquorWine testDrink = new LiquorWine("Moscato", 1.00, 20, 0);
       return false;
     } catch (IllegalArgumentException e) {
 
@@ -247,7 +247,7 @@ public class InventorySystemTester {
       return false;
     }
     try {
-      Beer testDrink = new Beer("Coors Light", 1.00, 20, 11);
+      LiquorWine testDrink = new LiquorWine("Moscato", 1.00, 20, 11);
       return false;
     } catch (IllegalArgumentException e) {
 
@@ -257,8 +257,8 @@ public class InventorySystemTester {
 
     // Accessors & Mutators
     try {
-      Beer testDrink = new Beer("Coors Light", 1.00, 20, 7);
-      if (!testDrink.getName().equals("Coors Light")) {
+      LiquorWine testDrink = new LiquorWine("Pino Grigio", 1.00, 20, 7);
+      if (!testDrink.getName().equals("Pino Grigio")) {
         return false;
       }
       if (Math.abs(testDrink.getUnitCost() - 1.00) > .001) {
@@ -283,10 +283,10 @@ public class InventorySystemTester {
 
     // CompareTo
     try {
-      Beer drinkA = new Beer("Miller", 1.20, 24, 8);
-      Beer drinkB = new Beer("Coors", 1.00, 22, 7);
-      Beer drinkC = new Beer("Cheaper Miller", 1.00, 22, 8);
-      Beer drinkD = new Beer("Coors Repeated", 1.00, 22, 7);
+      LiquorWine drinkA = new LiquorWine("Pino", 1.20, 24, 8);
+      LiquorWine drinkB = new LiquorWine("Moscato", 1.00, 22, 7);
+      LiquorWine drinkC = new LiquorWine("Cheaper Pino", 1.00, 22, 8);
+      LiquorWine drinkD = new LiquorWine("Moscato Repeated", 1.00, 22, 7);
       if (drinkA.compareTo(drinkB) != 1 || drinkB.compareTo(drinkA) != -1) {
         return false;
       }
@@ -302,10 +302,10 @@ public class InventorySystemTester {
 
     // Equals
     try {
-      Beer drinkA = new Beer("Miller", 1.20, 24, 8);
-      Beer drinkB = new Beer("Miller", 1.20, 22, 7);
-      Beer drinkC = new Beer("Coors", 1.00, 22, 8);
-      Beer drinkD = new Beer("Miller", 1.00, 22, 7);
+      LiquorWine drinkA = new LiquorWine("Pino", 1.20, 24, 8);
+      LiquorWine drinkB = new LiquorWine("Pino", 1.20, 22, 7);
+      LiquorWine drinkC = new LiquorWine("Moscato", 1.00, 22, 8);
+      LiquorWine drinkD = new LiquorWine("Pino", 1.00, 22, 7);
       if (!drinkA.equals(drinkB) || drinkA.equals(drinkC) || drinkA.equals(drinkD)) {
         return false;
       }
@@ -315,15 +315,15 @@ public class InventorySystemTester {
 
     // ToString
     try {
-      Beer drinkA = new Beer("Miller", 1.20, 24, 8);
-      if (!drinkA.toString().equals("[(Name: Miller) (Unit Cost: $1.2) (Quantity: 24) (Rating: 8/10)]")) {
+      LiquorWine drinkA = new LiquorWine("Pino", 1.20, 24, 8);
+      if (!drinkA.toString().equals("[(Name: Pino) (Unit Cost: $1.2) (Quantity: 24) (Rating: 8/10)]")) {
         return false;
       }
     } catch (Exception e) {
       return false;
     }
 
-    return true; // default
+    return true; 
   }
 
   /**
