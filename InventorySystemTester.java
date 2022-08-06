@@ -16,7 +16,7 @@ public class InventorySystemTester {
    * 
    * @return true if correct behavior, false otherwise.
    */
-  public static boolean shelfTest() {
+  public static boolean testShelf() {
     // #TODO
     return false; // default
   }
@@ -26,7 +26,7 @@ public class InventorySystemTester {
    * 
    * @return true if correct behavior, false otherwise.
    */
-  public static boolean coolerTest() {
+  public static boolean testCooler() {
     // #TODO
     return false; // default
   }
@@ -36,7 +36,7 @@ public class InventorySystemTester {
    * 
    * @return true if correct behavior, false otherwise.
    */
-  public static boolean beerTest() {
+  public static boolean testBeer() {
     // test constructor. Valid object. Invalid name, cost, quantity, rating.
     try {
       Beer testDrink = new Beer("Coors Light", 1.00, 24, 7);
@@ -184,7 +184,7 @@ public class InventorySystemTester {
    * 
    * @return true if correct behavior, false otherwise
    */
-  public static boolean liquorWineTest() {
+  public static boolean testLiquorWine() {
     try {
       LiquorWine testDrink = new LiquorWine("Pinot Noir", 1.00, 24, 7);
     } catch (Exception e) {
@@ -327,6 +327,52 @@ public class InventorySystemTester {
   }
 
   /**
+   * Tests the functionality of BSTNode.java
+   * 
+   * @return true if correct behavior, false otherwise
+   */
+  public static boolean testBSTNode(){
+    try{
+      //contructor
+      Beer testDrink = new Beer("Coors Light", 1.00, 24, 7);
+      BSTNode<Beer> testBeerNode1 = new BSTNode<>(testDrink);
+      BSTNode<Beer> testBeerNode2 = new BSTNode<>(testDrink);
+      BSTNode<Beer> testBeerNodeWithChildren = new BSTNode<>(testDrink, testBeerNode1, testBeerNode2);
+      if (!testBeerNodeWithChildren.getLeft().equals(testBeerNode1)){
+        return false;
+      }
+      if (!testBeerNodeWithChildren.getRight().equals(testBeerNode2)){
+        return false;
+      }
+
+      // Accessors & Mutators
+      BSTNode<Beer> testBeerNode3 = new BSTNode<>(testDrink);
+      BSTNode<Beer> testBeerNode4 = new BSTNode<>(testDrink);
+      testBeerNodeWithChildren.setLeft(testBeerNode3);
+      testBeerNodeWithChildren.setRight(testBeerNode4);
+      if (testBeerNodeWithChildren.getLeft().equals(testBeerNode1)){
+        return false;
+      }
+      if (testBeerNodeWithChildren.getRight().equals(testBeerNode2)){
+        return false;
+      }
+      if (!testBeerNodeWithChildren.getLeft().equals(testBeerNode3)){
+        return false;
+      }
+      if (!testBeerNodeWithChildren.getRight().equals(testBeerNode4)){
+        return false;
+      }
+      if (!testBeerNodeWithChildren.getData().equals(testDrink)){
+        return false;
+      }
+    }catch (Exception e){
+      return false;
+    }
+
+    return true; // default for now
+  }
+
+  /**
    * Runs all tester methods
    * 
    * @return true if all tests pass, false otherwise.
@@ -334,11 +380,11 @@ public class InventorySystemTester {
   public static boolean runAllTests() {
     // #TODO
 
-    if (!beerTest()) {
+    if (!testBeer()) {
       System.out.println("beerTest() failed!");
       return false;
     }
-    if (!liquorWineTest()){
+    if (!testLiquorWine()){
       System.out.println("liquorWine() failed!");
       return false;
     }

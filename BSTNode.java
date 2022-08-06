@@ -15,7 +15,7 @@ public class BSTNode<T extends Comparable<T>> {
    * @param data data carried by this binary node
    * @throws NullPointerException if data is null
    */
-  public BSTNode(T data) {
+  public BSTNode(T data) throws NullPointerException {
     if (data == null)
       throw new NullPointerException();
     this.data = data;
@@ -30,7 +30,7 @@ public class BSTNode<T extends Comparable<T>> {
    * @param right reference to the right child
    * @throws NullPointerException if data is null
    */
-  public BSTNode(T data, BSTNode<T> left, BSTNode<T> right) {
+  public BSTNode(T data, BSTNode<T> left, BSTNode<T> right) throws NullPointerException {
     if(data == null)
       throw new NullPointerException("data cannot be null");
     this.data = data;
