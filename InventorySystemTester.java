@@ -17,7 +17,30 @@ public class InventorySystemTester {
    * @return true if correct behavior, false otherwise.
    */
   public static boolean testShelf() {
-    // #TODO
+
+
+    try{
+      Shelf testShelf = new Shelf();
+
+      LiquorWine drink1 = new LiquorWine("Jameson", 24.0, 1, 7);
+
+      // add drinks to shelf, make sure it follows a BST format
+
+
+    }catch(Exception e){
+      return false;
+    }
+  
+
+
+
+
+
+
+
+
+
+
     return false; // default
   }
 
